@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+                <h2 class="text-center">Calculadora de Zona de Fresnel</h2>
+            </div>
+            <div class="card-body">
+                <p class="lead text-center">
+                    Esta aplicación te permite calcular la altura máxima usando la fórmula de Fresnel 8.656 * √(distancia/frecuencia) según la distancia y frecuencia proporcionadas.
+                </p>
+                <div class="text-center mt-4">
+                    <a href="{% url 'app:calculate' %}" class="btn btn-primary btn-lg">
+                        Ir a la calculadora
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nuevo apartado explicativo -->
+        <div class="card">
+            <div class="card-header bg-info text-white">
+                <h3 class="mb-0">¿Por qué calcular la Zona de Fresnel?</h3>
+            </div>
+            <div class="card-body">
+                <h4>¿Qué es la Zona de Fresnel?</h4>
+                <p>
+                    La Zona de Fresnel es un área elipsoidal tridimensional que rodea la línea directa de visión entre un transmisor y un receptor de señales inalámbricas. Esta zona es fundamental para la propagación efectiva de las ondas electromagnéticas.
+                </p>
+
+                <h4>Importancia del cálculo</h4>
+                <p>
+                    El cálculo de la altura máxima de la Zona de Fresnel es crucial para garantizar una comunicación inalámbrica eficiente por las siguientes razones:
+                </p>
+                <ul>
+                    <li><strong>Garantizar la calidad de la señal</strong>: La primera zona de Fresnel debe estar despejada en al menos un 60% para minimizar la pérdida de señal.</li>
+                    <li><strong>Planificación de enlaces</strong>: Permite determinar la altura óptima a la que deben instalarse las antenas para superar obstáculos.</li>
+                    <li><strong>Evitar interferencias</strong>: Ayuda a identificar posibles fuentes de interferencia que podrían afectar la transmisión de datos.</li>
+                </ul>
+
+                <h4>Aplicaciones prácticas</h4>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Redes inalámbricas</h5>
+                                <p class="card-text">Instalación de redes WiFi de largo alcance, enlaces punto a punto y redes mesh donde es esencial tener una línea de visión óptima.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Telecomunicaciones</h5>
+                                <p class="card-text">Diseño y planificación de torres de microondas, sistemas de radiotransmisión y enlaces satelitales.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">IoT (Internet de las Cosas)</h5>
+                                <p class="card-text">Despliegue de redes de sensores inalámbricos con comunicación eficiente entre dispositivos.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Conectividad rural</h5>
+                                <p class="card-text">Establecimiento de conexiones en áreas remotas donde los obstáculos geográficos como colinas o montañas pueden interferir.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alert alert-success mt-4">
+                    <h5><i class="bi bi-lightbulb"></i> ¿Sabías que?</h5>
+                    <p class="mb-0">
+                        La fórmula simplificada que utilizamos (8.656 * √(distancia/frecuencia)) nos permite calcular rápidamente la altura máxima de la zona de Fresnel en metros, facilitando el diseño de enlaces inalámbricos efectivos sin necesidad de cálculos complejos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
